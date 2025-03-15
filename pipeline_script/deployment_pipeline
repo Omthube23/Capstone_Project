@@ -20,7 +20,7 @@ pipeline {
                 }
             }
         }
-
+	/*
         stage("Configure Prometheus & Grafana") {
             steps {
                 script {
@@ -42,7 +42,7 @@ pipeline {
                 }
             }
         }
-
+	*/
         stage("Configure ArgoCD") {
             steps {
                 script {
