@@ -46,11 +46,7 @@ pipeline {
                 }
             }
         }
-<<<<<<< HEAD
         
-=======
-	
->>>>>>> 6826d9766ef362daac1ded77f16817c98567f1e0
         stage("Configure ArgoCD") {
             steps {
                 script {
