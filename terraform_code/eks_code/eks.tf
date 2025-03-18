@@ -17,20 +17,33 @@ module "eks" {
     }
   }
 
-  vpc_id                   = module.vpc.vpc_id
-  subnet_ids               = module.vpc.private_subnets
+  vpc_id     = module.vpc.vpc_id
+  subnet_ids = module.vpc.private_subnets
 
   eks_managed_node_groups = {
-    project-node = {
+    N-1 = {
       min_size     = 2
       max_size     = 4
       desired_size = 2
 
-      instance_types = ["t2.micro"]
+      instance_types = ["t2.medium"]
       capacity_type  = "SPOT"
 
       tags = {
-        ExtraTag = "project_Node"
+        ExtraTag = "N-1"
+      }
+    }
+
+    N-2 = {
+      min_size     = 2
+      max_size     = 4
+      desired_size = 2
+
+      instance_types = ["t2.medium"]
+      capacity_type  = "SPOT"
+
+      tags = {
+        ExtraTag = "N-2"
       }
     }
   }
